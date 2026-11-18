@@ -11,23 +11,25 @@
   <style>
     :root { color-scheme: light; --sea:#087f91; --deep:#075b70; --aqua:#dff5f3; --sand:#fff5df; --coral:#ffe4dc; --lav:#eeeaff; --ink:#19434b; }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); background:linear-gradient(180deg,#e8f8f7 0%,#fffaf0 100%); min-height:100vh; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:linear-gradient(180deg,#e8f8f7 0%,#fffaf0 100%); min-height:100vh; }
     header { text-align:center; padding:30px 18px 22px; background:linear-gradient(135deg,#087f91,#42b9b4); color:white; border-radius:0 0 28px 28px; }
     .logo { width:76px; height:76px; display:block; margin:0 auto 10px; }
-    h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:.2px; }
+    h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); }
     header p { margin:8px 0 0; font-size:1.05rem; }
     main { width:min(1100px,100%); margin:0 auto; padding:24px 18px 44px; }
     .intro { text-align:center; margin:0 auto 22px; max-width:700px; line-height:1.5; }
     h2 { font-size:1.35rem; margin:26px 0 14px; color:var(--deep); }
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:14px; }
-    .tile { min-height:142px; border:2px solid rgba(7,91,112,.10); border-radius:22px; padding:16px 10px; background:white; color:var(--ink); text-decoration:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; box-shadow:0 4px 12px rgba(12,85,94,.07); cursor:pointer; font:inherit; text-align:center; transition:transform .12s ease, box-shadow .12s ease; }
-    .tile:focus-visible, .tile:hover { outline:3px solid #f0bd63; outline-offset:2px; box-shadow:0 7px 18px rgba(12,85,94,.13); }
+    .tile { min-height:142px; border:2px solid rgba(7,91,112,.10); border-radius:22px; padding:16px 10px; background:white; color:var(--ink); text-decoration:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; box-shadow:0 4px 12px rgba(12,85,94,.07); text-align:center; transition:transform .12s ease,box-shadow .12s ease; }
+    .tile:focus-visible,.tile:hover { outline:3px solid #f0bd63; outline-offset:2px; box-shadow:0 7px 18px rgba(12,85,94,.13); }
     .tile:active { transform:scale(.98); }
     .emoji { font-size:2.5rem; line-height:1.1; }
     .tile strong { font-size:1.05rem; }
     .community .tile:nth-child(1) { background:var(--sand); }
     .community .tile:nth-child(2) { background:var(--coral); }
     .community .tile:nth-child(3) { background:var(--lav); }
+    .coming { opacity:.78; cursor:default; }
+    .coming small { font-size:.78rem; color:#52747a; }
     .notice { margin-top:24px; padding:18px; background:#fff; border-radius:18px; border:1px solid #d9ecea; line-height:1.5; }
     .notice a { color:var(--deep); font-weight:bold; }
     footer { text-align:center; color:#52747a; padding:0 18px 24px; font-size:.9rem; }
@@ -42,39 +44,34 @@
     <p>Learn, communicate and grow together</p>
   </header>
   <main>
-    <p class="intro">Croeso! Choose an area to explore. This is the first app home screen; we'll connect each button to the matching page on your existing website next.</p>
+    <p class="intro">Croeso! Choose an area to explore.</p>
     <h2>Pupil Learning Areas</h2>
     <section class="grid" aria-label="Pupil learning areas">
-      <button class="tile" data-area="Weather"><span class="emoji">🌦️</span><strong>Weather</strong></button>
-      <button class="tile" data-area="Emotions"><span class="emoji">💛</span><strong>Emotions</strong></button>
-      <button class="tile" data-area="Days and Months"><span class="emoji">📅</span><strong>Days &amp; Months</strong></button>
-      <button class="tile" data-area="Song Choice"><span class="emoji">🎵</span><strong>Song Choice</strong></button>
-      <button class="tile" data-area="Song Massage"><span class="emoji">🤲</span><strong>Song Massage</strong></button>
-      <button class="tile" data-area="Music and Songs"><span class="emoji">🎶</span><strong>Music &amp; Songs</strong></button>
-      <button class="tile" data-area="Sensory Circuits"><span class="emoji">🌀</span><strong>Sensory Circuits</strong></button>
-      <button class="tile" data-area="Communication Boards"><span class="emoji">💬</span><strong>Communication Boards</strong></button>
-      <button class="tile" data-area="Seasonal Themes"><span class="emoji">🌈</span><strong>Seasonal Themes</strong></button>
-      <button class="tile" data-area="Resources"><span class="emoji">📚</span><strong>Resources</strong></button>
+      <a class="tile" href="https://canolfanym.co.uk/weather"><span class="emoji">🌦️</span><strong>Weather</strong></a>
+      <a class="tile" href="https://canolfanym.co.uk/emotions"><span class="emoji">💛</span><strong>Emotions</strong></a>
+      <a class="tile" href="https://canolfanym.co.uk/calendar"><span class="emoji">📅</span><strong>Days &amp; Months</strong></a>
+      <a class="tile" href="https://canolfanym.co.uk/song-choice"><span class="emoji">🎵</span><strong>Song Choice</strong></a>
+      <a class="tile" href="https://canolfanym.co.uk/massage"><span class="emoji">🤲</span><strong>Song Massage</strong></a>
+      <a class="tile" href="https://canolfanym.co.uk/music"><span class="emoji">🎶</span><strong>Music &amp; Songs</strong></a>
+      <div class="tile coming" aria-label="Sensory Circuits coming soon"><span class="emoji">🌀</span><strong>Sensory Circuits</strong><small>Coming soon</small></div>
+      <a class="tile" href="https://canolfanym.co.uk/aac"><span class="emoji">💬</span><strong>Communication Boards</strong></a>
+      <a class="tile" href="https://canolfanym.co.uk/seasonal"><span class="emoji">🌈</span><strong>Seasonal Themes</strong></a>
+      <div class="tile coming" aria-label="Resources coming soon"><span class="emoji">📚</span><strong>Resources</strong><small>Coming soon</small></div>
     </section>
     <h2>School Community</h2>
     <section class="grid community" aria-label="School community areas">
-      <button class="tile" data-area="Notice Board"><span class="emoji">📌</span><strong>Notice Board</strong></button>
-      <button class="tile" data-area="Parent Zone"><span class="emoji">🏡</span><strong>Parent Zone</strong></button>
-      <button class="tile" data-area="Staff Zone"><span class="emoji">🌊</span><strong>Staff Zone</strong></button>
+      <div class="tile coming"><span class="emoji">📌</span><strong>Notice Board</strong><small>Coming soon</small></div>
+      <div class="tile coming"><span class="emoji">🏡</span><strong>Parent Zone</strong><small>Coming soon</small></div>
+      <div class="tile coming"><span class="emoji">🌊</span><strong>Staff Zone</strong><small>Coming soon</small></div>
     </section>
     <div class="notice">
-      <strong>Getting started</strong><br>
-      The buttons are placeholders while we connect your existing pages. Your current website remains available at
-      <a href="https://canolfanym.co.uk/">canolfanym.co.uk</a>.
+      <strong>Welcome to Canolfan Y Môr</strong><br>
+      Your learning areas open the matching pages on our school website. New community areas will be added as they are ready.
+      <br><a href="https://canolfanym.co.uk/">Visit the main website</a>
     </div>
   </main>
   <footer>Canolfan Y Môr · A welcoming place to learn and communicate</footer>
   <script>
-    document.querySelectorAll("[data-area]").forEach(button => {
-      button.addEventListener("click", () => {
-        alert(button.dataset.area + " will be connected to its Canolfan Y Môr page in the next setup step.");
-      });
-    });
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
     }
